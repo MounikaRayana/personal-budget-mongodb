@@ -10,17 +10,19 @@ body {
 nav.menu .pop{
     width: 10%;
     background-color: #4d5791;
-    height: 40px;
+    height: 30px;
     padding: 0 40px;
     display: inline-block;
+ 
 }
 
 nav.menu {
     width: 100%;
     background-color: #4d5791;
-    height: 44px;
+    height: 50px;
     padding: 0 40px;
     display: inline-block;
+    
 }
 
 nav.menu ul,
