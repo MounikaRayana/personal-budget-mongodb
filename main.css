@@ -107,3 +107,7 @@ footer.bottom {
         margin: 10px;
     }
 }
+/** This is an A11y Change **/
+h1.header-color{
+    color: blue;
+}
