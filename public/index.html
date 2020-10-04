@@ -129,6 +129,9 @@
                         '#ff6384',
                         '#36a2eb',
                         '#fd6b19',
+                        "#878BB6",
+                        "#4ACAB4",
+                        "#FF8153"
                     ],
                 }  
             ],
@@ -146,9 +149,10 @@
         function getBudget() {
             axios.get('/budget')
             .then(function (res) {
-                for (var i = 0; i < res.data.myBudget.length; i++) {
-                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                    dataSource.labels[i] = res.data.myBudget[i].title;
+                console.log(res);
+                for (var i = 0; i < res.data.length; i++) {
+                    dataSource.datasets[0].data[i] = res.data[i].budget;
+                    dataSource.labels[i] = res.data[i].title;
                     createChart();
                 }
             });

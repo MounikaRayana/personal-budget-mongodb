@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Eat out",
+        "budget": 100
+    },
+    {
+        "title": "Rent",
+        "budget": 275   
+    },
+    {
+        "title": "Grocery",
+        "budget": 110
+    },
+    {
+        "title": "Public Transport",
+        "budget": 30
+    },
+    {
+        "title": "Fuel",
+        "budget": 80
+    },
+    {
+        "title": "Clothing",
+        "budget": 50
+    },
+    {
+        "title": "Education",
+        "budget": 400
+    }
+]
