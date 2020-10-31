@@ -120,13 +120,7 @@
                 {
                     data: [],
                     backgroundColor: [
-                        '#ffcd56',
-                        '#ff6384',
-                        '#36a2eb',
-                        '#fd6b19',
-                        "#878BB6",
-                        "#4ACAB4",
-                        "#FF8153"
+                      
                     ],
                 }  
             ],
@@ -142,12 +136,13 @@
         }
 
         function getBudget() {
-            axios.get('http://localhost:3000/budget')
+            axios.get('http://localhost:3000/budget_data')
             .then(function (res) {
                 console.log(res);
                 for (var i = 0; i < res.data.length; i++) {
                     dataSource.datasets[0].data[i] = res.data[i].budget;
                     dataSource.labels[i] = res.data[i].title;
+                    dataSource.datasets[0].backgroundColor[i] = res.data[i].color;
                     createChart();
                     change(randomData());
                 }
@@ -194,19 +189,14 @@
     
     var color = d3.scale.ordinal()
         //.domain(["Lorem ipsum", "dolor sit", "amet", "consectetur", "adipisicing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt"])
-        .range(["#ffcd56",
-                "#ff6384",
-                "#36a2eb",
-                "#fd6b19",
-                "#878BB6",
-                "#4ACAB4",
-                "#FF8153"]);
+        .range(dataSource.datasets[0].backgroundColor);
     
     function randomData (){
         var values = dataSource.datasets[0].data;
         var labels = dataSource.labels;
+        var colors = dataSource.datasets[0].backgroundColor;
         return labels.map(function(label, val){
-            return { label: label, value: values[val] }
+            return { label: label, value: values[val],color:colors}
         });
     }
     
